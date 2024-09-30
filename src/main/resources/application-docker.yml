@@ -1,10 +1,6 @@
-app:
-  myport: ${PORT:0}
 server:
-  port: ${app.myport}
+  port: 8080
 spring:
-  profiles:
-    active: docker
   application:
     name: vendedor-service
   main:
@@ -27,4 +23,4 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://EUREKA-SERVER:8761/eureka/
